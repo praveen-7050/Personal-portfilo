@@ -1,0 +1,51 @@
+.about-section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #0d1117, #1f1f1f);
+  color: #ffffff;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #00ffff; 
+  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+  animation: fadeInDown 1s ease;
+}
+
+.section-subtitle, .about-extra {
+  font-size: 1.2rem;
+  color: #cccccc;
+    margin-top:15px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  animation: fadeIn 1.5s ease;
+}
+
+/* Additional fade-in animation */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  .section-subtitle, .about-extra {
+    font-size: 1rem;
+  }
+}
