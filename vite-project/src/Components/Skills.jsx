@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/styles/skills.css";
+import "../assets/Styles/skills.css";
 
 const Skills = () => {
   const skills = ["HTML 5", "CSS 3", "JavaScript ES6+", "React 18", "Bootstrap 5", "Version Control (Git)"];
