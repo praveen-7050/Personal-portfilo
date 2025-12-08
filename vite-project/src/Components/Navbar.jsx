@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import "../assets/Styles/navbar.css"
+import "../assets/Styles/navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ darkMode, setDarkMode }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? "scrolled" : ""}`}>
+    <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? "scrolled" : ""} ${darkMode ? "dark" : ""}`}>
       <div className="container">
         <a className="navbar-brand" href="#home">
           Praveen N
@@ -48,6 +48,11 @@ const Navbar = () => {
               <a className="nav-link" href="#contact">
                 Contact
               </a>
+            </li>
+            <li className="nav-item">
+              <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
+                {darkMode ? "Light" : "Dark"}
+              </button>
             </li>
           </ul>
         </div>
