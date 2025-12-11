@@ -83,14 +83,37 @@ const Projects = () => {
   const reactProjects = [
     {
       title: "Movie Booking App",
-      description: "A fully responsive React app for booking movie tickets.",
-      tools: "React 18, Bootstrap 5, CSS3",
+      description: "A fully responsive React app for booking movie tickets .",
+      tools: "React 18, Bootstrap 5, CSS3 ",
       image: "/images/Movie.PNG",
       live: "https://movie-booking-webdev.vercel.app/",
       github: "https://github.com/praveen-7050/Personal-portfilo.git",
     },
+    {
+      title: "Tic Tac Game ",
+      description: "A fully responsive React app for Tic Tac Game  .",
+      tools: " HTML,CSS3,Bootstrap 5,React 18 ",
+      image: "/images/TicTac.PNG",
+      live: "https://tic-tac-nine-kohl.vercel.app/",
+      github: "https://github.com/praveen-7050/Tic-Tac.git",
+    },
+    {
+      title: "Form Validation",
+      description: "A responsive React app with form validation and user authentication.",
+      tools: "React 18, HTML, CSS, Bootstrap 5",
+      image: "/images/FormValidation.PNG",
+      live: "https://form-validation-web-plum.vercel.app/",
+      github: "https://github.com/praveen-7050/mini-react-projects.git",
+    },
+    {
+      title: "Personal Portfolio",
+      description: "A modern, responsive personal portfolio built with React, showcasing projects, skills, and contact information. Includes interactive components, form validation, and clean UI/UX design.",
+      tools: "React 18, HTML5, CSS3, Bootstrap 5, JavaScript ES6+",
+      image: "/images/portflio.PNG",
+      live: "https://personal-portfilo-sooty.vercel.app/",
+      github: "https://github.com/praveen-7050/Personal-portfilo.git",
+    },
   ];
-
   const renderProjectCards = (projects) =>
     projects.map((project, index) => (
       <div key={index} className="col-lg-4 col-md-6 mb-4">
@@ -114,24 +137,19 @@ const Projects = () => {
         </div>
       </div>
     ));
-
   return (
     <section id="projects" className="projects-section py-5">
       <div className="container">
         <h2 className="section-title mb-4 text-center">Front-End Projects</h2>
         <p className="section-subtitle mb-5 text-center">Some of my recent work organized by technology.</p>
-
         <h3 className="category-title">HTML & CSS Projects</h3>
         <div className="row justify-content-center mb-5">{renderProjectCards(htmlCssProjects)}</div>
-
         <h3 className="category-title">JavaScript Projects</h3>
         <div className="row justify-content-center mb-5">{renderProjectCards(jsProjects)}</div>
-
         <h3 className="category-title">React Projects</h3>
         <div className="row justify-content-center">{renderProjectCards(reactProjects)}</div>
       </div>
     </section>
   );
 };
-
 export default Projects;

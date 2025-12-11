@@ -2,9 +2,10 @@ import React from "react";
 import "../assets/Styles/skills.css";
 
 const Skills = () => {
-  const skills = ["HTML 5", "CSS 3", "JavaScript ES6+", "React 18", "Bootstrap 5", "Version Control (Git)"];
+const skills = ["HTML5", "CSS3", "JavaScript ES6+", "React 18", "Bootstrap 5", "MongoDB", "SQL", "Version Control (Git)"];
 
-  const tools = ["VS Code", "GitHub", "Chrome DevTools"];
+const tools = ["VS Code", "GitHub", "Chrome DevTools", "MongoDB Compass", "MongoDB Shell (mongosh)"];
+
 
   return (
     <section id="skills" className="skills-section py-5">

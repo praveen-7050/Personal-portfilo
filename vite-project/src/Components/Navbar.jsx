@@ -49,11 +49,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                 Contact
               </a>
             </li>
-            <li className="nav-item">
-              <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
-                {darkMode ? "Light" : "Dark"}
-              </button>
-            </li>
           </ul>
         </div>
       </div>
