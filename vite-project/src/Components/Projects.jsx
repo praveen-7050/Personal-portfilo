@@ -43,7 +43,15 @@ const Projects = () => {
       description: "A functional calculator built with vanilla JavaScript.",
       tools: "JavaScript ES6+, HTML5, CSS3",
       image: "/images/claculator.PNG",
-      live: "#",
+      live: "https://calculator-web-praveen.netlify.app/",
+      github: "https://github.com/praveen-7050/java-script-small-projects.git",
+    },
+    {
+      title: "TO DO List App",
+      description: "A functional TO-DO list app  built with vanilla JavaScript.",
+      tools: "JavaScript ES6+, HTML5, CSS3 Bootstrap",
+      image: "/images/Todo-list.PNG",
+      live: "https://todolistwebpraveen.netlify.app/",
       github: "https://github.com/praveen-7050/java-script-small-projects.git",
     },
     {
