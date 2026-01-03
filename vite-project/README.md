@@ -1,16 +1,114 @@
-# React + Vite
+🌐 Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page portfolio application (SPA) built using React JS + Vite, designed to showcase my skills, projects, and professional profile with a modern, animated user experience. The application emphasizes clean UI, smooth transitions, and responsive design.
 
-Currently, two official plugins are available:
+🔗 GitHub Repository:
+https://github.com/praveen-7050/Personal-portfilo.git
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📌 Project Overview
 
-## React Compiler
+This project serves as my personal developer portfolio, built entirely on the frontend. It highlights who I am, what I’ve built, and the technologies I work with — all within a fast, lightweight React SPA architecture.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🧭 Sections & Navigation
 
-## Expanding the ESLint configuration
+Home – Introduction and hero section
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+About – Personal and professional summary
+
+Skills – Technical skill set with visual representation
+
+Projects – Showcasing selected projects with details
+
+Contact – Contact information / call-to-action
+
+Footer – Social links and credits
+
+Navbar – Smooth navigation across sections
+
+All sections are integrated into a single-page flow with animations for better UX.
+
+✨ Key Features
+
+Single Page Application (SPA) architecture
+
+Built with React JS + Vite for fast performance
+
+Responsive design across devices
+
+Smooth animations and transitions
+
+Reusable React components
+
+Clean and modern UI layout
+
+🛠️ Tech Stack
+Frontend Tools
+
+HTML5
+
+CSS3
+
+JavaScript (ES6+)
+
+React JS
+
+Vite
+
+Bootstrap
+
+⚙️ How to Run the Project Locally
+# Clone the repository
+git clone https://github.com/praveen-7050/Personal-portfilo.git
+
+# Navigate to the project folder
+cd Personal-portfilo
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+
+
+Application runs on:
+👉 http://localhost:5173/
+
+📁 Folder Structure (High Level)
+src/
+ ├─ components/
+ ├─ assets/
+ ├─ App.jsx
+ └─ main.jsx
+
+
+Structured for readability, scalability, and easy iteration.
+
+🚀 Future Enhancements
+
+Backend contact form integration
+
+Dark / light mode toggle
+
+SEO optimization
+
+Performance enhancements
+
+Deployment on custom domain
+
+🎯 Learning Outcomes
+
+Hands-on React SPA development
+
+Component-based UI design
+
+Animation-driven UX thinking
+
+Frontend project structuring
+
+Real-world portfolio presentation
+
+👨‍💻 Author
+
+Praveen N
+Frontend / Full Stack Developer (In Progress)
+Focused on React, JavaScript, and modern UI systems
