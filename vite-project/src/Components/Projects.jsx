@@ -91,16 +91,16 @@ const Projects = () => {
   const reactProjects = [
     {
       title: "Movie Booking App",
-      description: "A fully responsive React app for booking movie tickets .",
-      tools: "React 18, Bootstrap 5, CSS3 ",
+      description: "A fully responsive React app for booking movie tickets.",
+      tools: "React 18, Bootstrap 5, CSS3",
       image: "/images/Movie.PNG",
       live: "https://movie-booking-webdev.vercel.app/",
-      github: "https://github.com/praveen-7050/Personal-portfilo.git",
+      github: "https://github.com/praveen-7050/Movie-Booking-web.git",
     },
     {
-      title: "Tic Tac Game ",
-      description: "A fully responsive React app for Tic Tac Game  .",
-      tools: " HTML,CSS3,Bootstrap 5,React 18 ",
+      title: "Tic Tac Game",
+      description: "A fully responsive React app for Tic Tac Game.",
+      tools: "HTML, CSS3, Bootstrap 5, React 18",
       image: "/images/TicTac.PNG",
       live: "https://tic-tac-nine-kohl.vercel.app/",
       github: "https://github.com/praveen-7050/Tic-Tac.git",
@@ -122,42 +122,48 @@ const Projects = () => {
       github: "https://github.com/praveen-7050/Personal-portfilo.git",
     },
   ];
+
   const renderProjectCards = (projects) =>
     projects.map((project, index) => (
-      <div key={index} className="col-lg-4 col-md-6 mb-4">
-        <div className="card project-card h-100">
-          <img src={project.image} className="card-img-top" alt={project.title} />
+      <div key={index} className="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div className="project-card">
+          <div className="card-img-wrapper">
+            <img src={project.image} alt={project.title} className="card-img-top" />
+          </div>
           <div className="card-body">
             <h5 className="card-title">{project.title}</h5>
-            <p className="tools">
-              <strong>Tools:</strong> {project.tools}
-            </p>
+            <p className="tools">{project.tools}</p>
             <p className="card-text">{project.description}</p>
           </div>
           <div className="card-footer d-flex justify-content-center gap-2">
-            <a href={project.live} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
+            <a href={project.live} target="_blank" rel="noreferrer" className="btn btn-live">
               View Live
             </a>
-            <a href={project.github} target="_blank" rel="noreferrer" className="btn btn-outline-primary btn-sm">
+            <a href={project.github} target="_blank" rel="noreferrer" className="btn btn-github">
               GitHub
             </a>
           </div>
         </div>
       </div>
     ));
+
   return (
     <section id="projects" className="projects-section py-5">
       <div className="container">
-        <h2 className="section-title mb-4 text-center">Front-End Projects</h2>
-        <p className="section-subtitle mb-5 text-center">Some of my recent work organized by technology.</p>
+        <h2 className="section-title mb-4 text-center">Full-Stack Projects</h2>
+        <p className="section-subtitle mb-5 text-center">My work across front-end and back-end technologies.</p>
+
         <h3 className="category-title">HTML & CSS Projects</h3>
         <div className="row justify-content-center mb-5">{renderProjectCards(htmlCssProjects)}</div>
+
         <h3 className="category-title">JavaScript Projects</h3>
         <div className="row justify-content-center mb-5">{renderProjectCards(jsProjects)}</div>
+
         <h3 className="category-title">React Projects</h3>
         <div className="row justify-content-center">{renderProjectCards(reactProjects)}</div>
       </div>
     </section>
   );
 };
+
 export default Projects;
