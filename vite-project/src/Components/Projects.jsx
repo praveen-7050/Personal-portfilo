@@ -86,6 +86,14 @@ const Projects = () => {
       live: "https://darg-drop-web.netlify.app/",
       github: "https://github.com/praveen-7050/java-script-small-projects.git",
     },
+    {
+      title: "Task Manager",
+      description: "A task management app built with TypeScript to create and delete tasks with type-safe components and clean UI.",
+      tools: "Typescript, HTML5, CSS3",
+      image: "/images/Task_manager.PNG",
+      live: "https://to-d-ts.vercel.app/",
+      github: "https://github.com/praveen-7050/Typescript.git",
+    },
   ];
 
   const reactProjects = [
