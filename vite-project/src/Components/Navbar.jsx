@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useTheme } from "../ThemeContext";
 import "../assets/Styles/navbar.css";
 
-const Navbar = ({ darkMode, setDarkMode }) => {
+const Navbar = () => {
+  const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -14,7 +16,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   }, []);
 
   return (
-    <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? "scrolled" : ""} ${darkMode ? "dark" : ""}`}>
+    <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? "scrolled" : ""}`}>
       <div className="container">
         <a className="navbar-brand" href="#home">
           Praveen N
@@ -48,6 +50,11 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               <a className="nav-link" href="#contact">
                 Contact
               </a>
+            </li>
+            <li className="nav-item">
+              <button className="btn btn-outline-secondary ms-3" onClick={toggleTheme}>
+                {theme === "dark" ? <i className="bi bi-sun"></i> : <i className="bi bi-moon"></i>}
+              </button>
             </li>
           </ul>
         </div>

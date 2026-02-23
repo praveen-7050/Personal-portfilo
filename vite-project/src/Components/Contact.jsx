@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import "../assets/Styles/contact.css";
 
 const Contact = () => {
@@ -42,12 +43,34 @@ const Contact = () => {
 
     setLoading(true);
 
-    // fake submit delay
-    setTimeout(() => {
-      setSubmitted(true);
-      setLoading(false);
-      setForm({ name: "", email: "", message: "" }); // reset form
-    }, 1500);
+    const serviceId = "service_your_service_id"; 
+    const templateId = "template_your_template_id"; 
+    const publicKey = "your_public_key"; 
+
+    const templateParams = {
+      from_name: form.name,
+      from_email: form.email,
+      to_email: "praveen.n7050@gmail.com",
+      message: form.message,
+    };
+
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        console.log("Email sent successfully!", response);
+        setSubmitted(true);
+        setLoading(false);
+        setForm({ name: "", email: "", message: "" }); 
+      })
+      .catch((error) => {
+        console.error("Failed to send email:", error);
+        setLoading(false);
+        const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`);
+        const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`);
+        const mailtoLink = `mailto:praveen.n7050@gmail.com?subject=${subject}&body=${body}`;
+        window.open(mailtoLink, '_blank');
+        alert("Email client opened with your message. If it doesn't work, please email directly to praveen.n7050@gmail.com");
+      });
   };
 
   return (
@@ -60,31 +83,30 @@ const Contact = () => {
         <div className="row justify-content-center">
           <div className="col-lg-6 col-md-8">
             <form className="contact-form p-4" onSubmit={handleSubmit}>
-              {/* NAME */}
               <div className="mb-3">
                 <label className="form-label">Your Name</label>
                 <input type="text" className={`form-control input-field ${errors.name ? "is-invalid" : ""}`} placeholder="Enter your name" name="name" value={form.name} onChange={handleChange} />
                 {errors.name && <div className="invalid-feedback">{errors.name}</div>}
               </div>
-
-              {/* EMAIL */}
               <div className="mb-3">
                 <label className="form-label">Your Email</label>
                 <input type="email" className={`form-control input-field ${errors.email ? "is-invalid" : ""}`} placeholder="Enter your email" name="email" value={form.email} onChange={handleChange} />
                 {errors.email && <div className="invalid-feedback">{errors.email}</div>}
               </div>
-
-              {/* MESSAGE */}
               <div className="mb-3">
                 <label className="form-label">Message</label>
                 <textarea className={`form-control input-field ${errors.message ? "is-invalid" : ""}`} rows="4" placeholder="Tell me something…" name="message" value={form.message} onChange={handleChange} />
                 {errors.message && <div className="invalid-feedback">{errors.message}</div>}
               </div>
-
-              {/* SUBMIT BUTTON */}
-              <button type="submit" className="btn btn-primary contact-btn w-100" disabled={loading}>
+              <button type="submit" className="btn btn-primary contact-btn w-100 mb-3" disabled={loading}>
                 {loading ? "Sending..." : "Send Message 🚀"}
               </button>
+
+              <div className="text-center">
+                <small className="text-muted">
+                  Or email directly: <a href="mailto:praveen.n7050@gmail.com" className="text-decoration-none">praveen.n7050@gmail.com</a>
+                </small>
+              </div>
             </form>
           </div>
         </div>

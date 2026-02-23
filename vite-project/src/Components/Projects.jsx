@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../assets/Styles/projects.css";
 
 const Projects = () => {
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal");
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    cardRefs.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const addToRefs = (el) => {
+    if (el && !cardRefs.current.includes(el)) {
+      cardRefs.current.push(el);
+    }
+  };
+
   const htmlCssProjects = [
     {
       title: "Furniture E-commerce Website (indecasa)",
@@ -134,7 +161,7 @@ const Projects = () => {
   const renderProjectCards = (projects) =>
     projects.map((project, index) => (
       <div key={index} className="col-lg-4 col-md-6 col-sm-12 mb-4">
-        <div className="project-card">
+        <div className="project-card" ref={addToRefs}>
           <div className="card-img-wrapper">
             <img src={project.image} alt={project.title} className="card-img-top" />
           </div>
@@ -145,10 +172,10 @@ const Projects = () => {
           </div>
           <div className="card-footer d-flex justify-content-center gap-2">
             <a href={project.live} target="_blank" rel="noreferrer" className="btn btn-live">
-              View Live
+              <i className="bi bi-eye-fill me-2"></i>Live Demo
             </a>
             <a href={project.github} target="_blank" rel="noreferrer" className="btn btn-github">
-              GitHub
+              <i className="bi bi-github me-2"></i>GitHub
             </a>
           </div>
         </div>

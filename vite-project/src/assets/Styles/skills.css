@@ -1,37 +1,55 @@
 .skills-section {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  color: #333;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .skills-section {
   background: linear-gradient(135deg, #0d1117, #1f1f1f);
   color: #ffffff;
 }
 
 .section-title {
   font-size: 2.5rem;
-  color: #00ffff; 
+  color: #00d4ff;
   margin-bottom: 15px;
 }
 
 .section-subtitle {
   font-size: 1.2rem;
-  color: #b3ffff; 
+  color: #666;
   margin-bottom: 50px;
+}
+
+[data-bs-theme="dark"] .section-subtitle {
+  color: #b3ffff;
 }
 
 .sub-heading {
   font-size: 1.5rem;
-  color: #00ffff; 
+  color: #00d4ff;
   margin-bottom: 20px;
 }
-.skill-card, .tool-card {
+.skill-card,
+.tool-card {
   background-color: #1f1f1f;
-  color: #00ffff; 
+  color: #00ffff;
   border-radius: 15px;
   font-weight: 600;
   font-size: 1rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease,
+    background-color 0.3s ease;
   cursor: default;
 }
 
-.skill-card:hover, .tool-card:hover {
+.skill-card:hover,
+.tool-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
   background-color: #00ffff;
@@ -44,14 +62,16 @@
   .section-subtitle {
     font-size: 1rem;
   }
-  .skill-card, .tool-card {
+  .skill-card,
+  .tool-card {
     font-size: 0.9rem;
     padding: 8px 5px;
   }
 }
 
 @media (max-width: 576px) {
-  .skill-card, .tool-card {
+  .skill-card,
+  .tool-card {
     font-size: 0.85rem;
     padding: 6px 4px;
   }

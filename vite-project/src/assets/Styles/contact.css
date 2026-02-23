@@ -1,48 +1,84 @@
 .contact-section {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  color: #333;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .contact-section {
   background: linear-gradient(135deg, #0d1117, #1a1a1a);
   color: #ffffff;
 }
 
 .contact-title {
   font-size: 2.5rem;
-  color: #00eaff;
+  color: #00d4ff;
   font-weight: 700;
 }
 
 .contact-subtitle {
   font-size: 1.1rem;
+  color: #333;
+}
+
+[data-bs-theme="dark"] .contact-subtitle {
   color: #b3faff;
 }
 
 .contact-form {
-  background: #1f1f1f;
+  background: #f8f9fa;
   border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+[data-bs-theme="dark"] .contact-form {
+  background: #1f1f1f;
   box-shadow: 0 10px 30px rgba(0, 229, 255, 0.15);
   color: #fff;
 }
 
 .form-label {
   font-weight: 500;
+  color: #333;
+}
+
+[data-bs-theme="dark"] .form-label {
   color: #00d4ff;
 }
 
 .input-field {
-  background: #141414;
-  border: 1px solid #00d4ff;
-  color: white;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  color: #333;
   padding: 10px;
   border-radius: 10px;
   transition: 0.3s ease;
 }
 
+.input-field::placeholder {
+  color: #999;
+}
+
+[data-bs-theme="dark"] .input-field {
+  background: #141414;
+  border: 1px solid #00d4ff;
+  color: white;
+}
+
+[data-bs-theme="dark"] .input-field::placeholder {
+  color: #ccc;
+}
+
 .input-field:focus {
-  border-color: #00ffff;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  border-color: #00d4ff;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
 }
 
 .contact-btn {
   background-color: #00d4ff;
-  color: #0d1117;
+  color: #ffffff;
   font-weight: 600;
   border-radius: 10px;
   padding: 12px 0;
@@ -63,7 +99,21 @@
 }
 
 .alert-success {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+[data-bs-theme="dark"] .alert-success {
   background: #003b44;
   color: #00f6ff;
   border: 1px solid #00eaff;
+}
+
+.text-muted {
+  color: #666 !important;
+}
+
+[data-bs-theme="dark"] .text-muted {
+  color: #ccc !important;
 }

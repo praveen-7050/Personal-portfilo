@@ -2,24 +2,28 @@
   font-weight: bold;
   font-size: 1.7rem;
   color: #00d4ff !important;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: color 0.3s ease;
 }
 
 .navbar-brand:hover {
-  color: #ff4d6d !important; 
+  color: #ff4d6d !important;
   transform: scale(1.05);
 }
 .nav-link {
   margin-left: 20px;
-  color: #ffffff !important;
+  color: #333 !important;
   cursor: pointer;
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
 }
+
+[data-bs-theme="dark"] .nav-link {
+  color: #fff !important;
+}
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0%;
   height: 2px;
@@ -41,14 +45,24 @@
 }
 
 .navbar {
-  transition: background-color 0.4s ease, padding 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    padding 0.4s ease;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-bs-theme="dark"] .navbar {
+  background-color: rgba(13, 17, 23, 0.95) !important;
 }
 
 .navbar.scrolled {
-  background-color: rgba(13, 17, 23, 0.964);
-  padding: 10px 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+[data-bs-theme="dark"] .navbar.scrolled {
+  background-color: rgba(13, 17, 23, 0.95) !important;
 }
 .nav-link::after {
-  transition: width 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+  transition: width 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }

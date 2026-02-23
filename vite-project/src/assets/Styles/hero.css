@@ -1,9 +1,17 @@
 .hero-section {
   min-height: 100vh;
   padding: 120px 20px 60px;
-  background: linear-gradient(135deg, #0d1117, #1f1f1f);
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
   display: flex;
   align-items: center;
+  color: #333;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .hero-section {
+  background: linear-gradient(135deg, #0d1117, #1f1f1f);
   color: #ffffff;
 }
 
@@ -40,14 +48,21 @@
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-  animation: typing 2.5s steps(9) forwards, blink 0.8s infinite;
+  animation:
+    typing 2.5s steps(9) forwards,
+    blink 0.8s infinite;
 }
 
 .hero-subtitle {
   font-size: 1.35rem;
   font-weight: 500;
-  color: #00d4ff;
+  color: #333;
   margin: 18px 0 28px;
+}
+
+[data-bs-theme="dark"] .hero-subtitle {
+  color: #00d4ff;
+}
   opacity: 0;
   animation: fadeUp 1.2s ease forwards;
   animation-delay: 0.6s;
@@ -82,8 +97,6 @@
   box-shadow: 0 8px 20px #00d4ff;
 }
 
-
-
 .github-btn {
   display: inline-flex;
   align-items: center;
@@ -95,7 +108,9 @@
   color: #ffffff;
   text-decoration: none;
   gap: 8px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .github-btn:hover {
@@ -121,7 +136,10 @@
   justify-content: center;
   background: rgba(255, 255, 255, 0.06);
   font-size: 1.6rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease;
 }
 
 .social-icon:hover {
@@ -141,34 +159,63 @@
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #00d4ff;
-  animation: float 4s ease-in-out infinite, glow 3s ease-in-out infinite;
+  animation:
+    float 4s ease-in-out infinite,
+    glow 3s ease-in-out infinite;
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 9ch; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 9ch;
+  }
 }
 
 @keyframes blink {
-  0%, 100% { border-color: transparent; }
-  50% { border-color: #00d4ff; }
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #00d4ff;
+  }
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-16px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes glow {
-  0% { box-shadow: 0 0 12px rgba(0, 212, 255, 0.3); }
-  50% { box-shadow: 0 0 28px rgba(0, 212, 255, 0.7); }
-  100% { box-shadow: 0 0 12px rgba(0, 212, 255, 0.3); }
+  0% {
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(0, 212, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+  }
 }
 
 @media (max-width: 992px) {
